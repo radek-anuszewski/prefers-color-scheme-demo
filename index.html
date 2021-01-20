@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prefers color scheme demo</title>
+  <style>
+    :root {
+        --background-color: red;
+        --text-color: red;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background-color: black;
+            --text-color: white;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --background-color: white;
+            --text-color: black;
+        }
+    }
+
+    .result {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+<h1>
+  Prefers color scheme demo
+</h1>
+If you set dark color scheme in your OS, you'll se black background and white text.
+<br>
+If not, you'll see white background and black text.
+<div class="result">
+  Result
+</div>
+</body>
+</html>
